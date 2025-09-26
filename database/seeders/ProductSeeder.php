@@ -12,45 +12,40 @@ class ProductSeeder extends Seeder
         $now = now();
 
         $products = [
-            // Bebidas
-            ['name' => 'Agua sin gas 600 ml',     'description' => 'Agua de mesa. Precio en soles (PEN).',         'price' => 2.50,  'stock' => 200, 'is_active' => true],
-            ['name' => 'Agua sin gas 1.5 L',      'description' => 'Botella familiar. Precio en soles (PEN).',     'price' => 4.50,  'stock' => 150, 'is_active' => true],
-            ['name' => 'Gaseosa sabor cola 500 ml','description' => 'Bebida gaseosa. Precio en soles (PEN).',      'price' => 4.00,  'stock' => 120, 'is_active' => true],
-            ['name' => 'Gaseosa sabor cola 1.5 L','description' => 'Ideal para compartir. Precio en soles (PEN).', 'price' => 8.50,  'stock' => 90,  'is_active' => true],
-            ['name' => 'Jugo de naranja 1 L',     'description' => 'Néctar de fruta. Precio en soles (PEN).',      'price' => 8.90,  'stock' => 80,  'is_active' => true],
-            ['name' => 'Bebida energizante 473 ml','description' => 'Energía al instante. Precio en soles (PEN).', 'price' => 7.50,  'stock' => 60,  'is_active' => true],
+            // Anillos
+            ['name' => 'Anillo solitario oro 18k',         'description' => 'Anillo clásico con diamante central. Precio en soles (PEN).',          'price' => 1450.00, 'stock' => 12, 'is_active' => true],
+            ['name' => 'Anillo compromiso plata zirconia', 'description' => 'Diseño elegante con piedra central. Precio en soles (PEN).',           'price' => 280.00,  'stock' => 25, 'is_active' => true],
+            ['name' => 'Sortija oro rosa triple aro',      'description' => 'Tres bandas entrelazadas. Precio en soles (PEN).',                     'price' => 980.00,  'stock' => 8,  'is_active' => true],
+            ['name' => 'Anillo caballero acero ónix',      'description' => 'Anillo robusto con piedra ónix. Precio en soles (PEN).',              'price' => 210.00,  'stock' => 18, 'is_active' => true],
 
-            // Snacks / Chocolates / Galletas
-            ['name' => 'Chocolate con leche 35 g','description' => 'Tableta clásica. Precio en soles (PEN).',       'price' => 2.20,  'stock' => 300, 'is_active' => true],
-            ['name' => 'Chocolate bitter 90 g',   'description' => 'Alto cacao. Precio en soles (PEN).',           'price' => 6.50,  'stock' => 140, 'is_active' => true],
-            ['name' => 'Barra de cereal 25 g',    'description' => 'Snack práctico. Precio en soles (PEN).',       'price' => 2.80,  'stock' => 220, 'is_active' => true],
-            ['name' => 'Papas fritas 150 g',      'description' => 'Crocantes. Precio en soles (PEN).',            'price' => 6.90,  'stock' => 110, 'is_active' => true],
-            ['name' => 'Maní salado 120 g',       'description' => 'Fuente de energía. Precio en soles (PEN).',    'price' => 5.20,  'stock' => 130, 'is_active' => true],
-            ['name' => 'Galletas de vainilla 6 un','description' => 'Dulces y ligeras. Precio en soles (PEN).',    'price' => 3.40,  'stock' => 180, 'is_active' => true],
-            ['name' => 'Galletas de chocolate 6 un','description' => 'Relleno cremoso. Precio en soles (PEN).',    'price' => 3.50,  'stock' => 170, 'is_active' => true],
+            // Collares
+            ['name' => 'Collar corazón oro amarillo',      'description' => 'Dije en forma de corazón. Precio en soles (PEN).',                   'price' => 750.00,  'stock' => 15, 'is_active' => true],
+            ['name' => 'Cadena plata eslabón italiano',    'description' => 'Cadena de plata esterlina 925. Precio en soles (PEN).',              'price' => 320.00,  'stock' => 22, 'is_active' => true],
+            ['name' => 'Collar perlas cultivadas 45 cm',   'description' => 'Perlas redondas con broche de plata. Precio en soles (PEN).',        'price' => 1350.00, 'stock' => 10, 'is_active' => true],
+            ['name' => 'Gargantilla choker circonitas',    'description' => 'Brillo moderno para la noche. Precio en soles (PEN).',               'price' => 265.00,  'stock' => 30, 'is_active' => true],
 
-            // Abarrotes
-            ['name' => 'Arroz superior 1 kg',     'description' => 'Grano largo. Precio en soles (PEN).',          'price' => 4.80,  'stock' => 200, 'is_active' => true],
-            ['name' => 'Azúcar rubia 1 kg',       'description' => 'Dulzor natural. Precio en soles (PEN).',       'price' => 4.50,  'stock' => 180, 'is_active' => true],
-            ['name' => 'Fideos spaghetti 500 g',  'description' => 'Sémola de trigo. Precio en soles (PEN).',      'price' => 3.80,  'stock' => 160, 'is_active' => true],
-            ['name' => 'Aceite vegetal 1 L',      'description' => 'Cocina diaria. Precio en soles (PEN).',        'price' => 13.90, 'stock' => 120, 'is_active' => true],
-            ['name' => 'Atún en agua 170 g',      'description' => 'Listo para comer. Precio en soles (PEN).',     'price' => 6.20,  'stock' => 140, 'is_active' => true],
-            ['name' => 'Leche evaporada 400 g',   'description' => 'Para postres y café. Precio en soles (PEN).',  'price' => 4.50,  'stock' => 190, 'is_active' => true],
-            ['name' => 'Pan de molde 550 g',      'description' => 'Rebanadas suaves. Precio en soles (PEN).',     'price' => 7.90,  'stock' => 90,  'is_active' => true],
+            // Aretes
+            ['name' => 'Aretes argolla oro 14k',           'description' => 'Argollas medianas con cierre seguro. Precio en soles (PEN).',       'price' => 540.00,  'stock' => 20, 'is_active' => true],
+            ['name' => 'Aretes botón perla natural',       'description' => 'Perlas cultivadas con base de plata. Precio en soles (PEN).',        'price' => 360.00,  'stock' => 26, 'is_active' => true],
+            ['name' => 'Aretes colgantes amatista',        'description' => 'Piedra amatista tallada. Precio en soles (PEN).',                    'price' => 295.00,  'stock' => 14, 'is_active' => true],
+            ['name' => 'Ear cuff plata minimalista',       'description' => 'Aro ajustable sin perforación. Precio en soles (PEN).',              'price' => 110.00,  'stock' => 40, 'is_active' => true],
 
-            // Lácteos
-            ['name' => 'Yogur fresa 1 L',         'description' => 'Cremoso y delicioso. Precio en soles (PEN).',  'price' => 9.50,  'stock' => 100, 'is_active' => true],
-            ['name' => 'Queso fresco 250 g',      'description' => 'Ideal para desayunos. Precio en soles (PEN).', 'price' => 8.90,  'stock' => 70,  'is_active' => true],
+            // Pulseras
+            ['name' => 'Pulsera tennis zirconias',         'description' => 'Pulsera flexible con zirconias brillantes. Precio en soles (PEN).',  'price' => 580.00,  'stock' => 16, 'is_active' => true],
+            ['name' => 'Pulsera cuero trenzado acero',     'description' => 'Estilo urbano para caballero. Precio en soles (PEN).',               'price' => 160.00,  'stock' => 28, 'is_active' => true],
+            ['name' => 'Brazalete oro blanco martillado',  'description' => 'Textura artesanal única. Precio en soles (PEN).',                    'price' => 1240.00, 'stock' => 7,  'is_active' => true],
+            ['name' => 'Pulsera plata charms personalizable','description' => 'Incluye tres dijes temáticos. Precio en soles (PEN).',            'price' => 390.00,  'stock' => 19, 'is_active' => true],
 
-            // Limpieza
-            ['name' => 'Detergente en polvo 800 g','description' => 'Ropa limpia. Precio en soles (PEN).',         'price' => 12.50, 'stock' => 85,  'is_active' => true],
-            ['name' => 'Lavavajillas 500 ml',     'description' => 'Desengrasa rápido. Precio en soles (PEN).',    'price' => 6.90,  'stock' => 95,  'is_active' => true],
-            ['name' => 'Papel higiénico pack x4', 'description' => 'Suave y rendidor. Precio en soles (PEN).',     'price' => 9.90,  'stock' => 150, 'is_active' => true],
+            // Relojes
+            ['name' => 'Reloj cuarzo acero dorado',        'description' => 'Caja de 36 mm resistente al agua. Precio en soles (PEN).',          'price' => 870.00,  'stock' => 9,  'is_active' => true],
+            ['name' => 'Reloj automático correa cuero',    'description' => 'Movimiento visible y correa en piel. Precio en soles (PEN).',       'price' => 1580.00, 'stock' => 5,  'is_active' => true],
+            ['name' => 'Reloj minimalista malla milanesa', 'description' => 'Diseño ultradelgado unisex. Precio en soles (PEN).',                'price' => 520.00,  'stock' => 13, 'is_active' => true],
 
-            // Cuidado personal
-            ['name' => 'Shampoo 400 ml',          'description' => 'Brillo y suavidad. Precio en soles (PEN).',    'price' => 17.90, 'stock' => 60,  'is_active' => true],
-            ['name' => 'Jabón de tocador x3',     'description' => 'Fragancia fresca. Precio en soles (PEN).',     'price' => 6.50,  'stock' => 140, 'is_active' => true],
-            ['name' => 'Pasta dental 90 g',       'description' => 'Protección completa. Precio en soles (PEN).',  'price' => 8.90,  'stock' => 120, 'is_active' => true],
+            // Accesorios
+            ['name' => 'Tobillera plata con dijes',        'description' => 'Dijes marinos en plata 925. Precio en soles (PEN).',                'price' => 180.00,  'stock' => 24, 'is_active' => true],
+            ['name' => 'Broche pedrería vintage',          'description' => 'Broche estilo vintage con cristales. Precio en soles (PEN).',       'price' => 210.00,  'stock' => 17, 'is_active' => true],
+            ['name' => 'Alfiler corbata acero negro',      'description' => 'Alfiler magnético para corbata. Precio en soles (PEN).',            'price' => 95.00,   'stock' => 35, 'is_active' => true],
+            ['name' => 'Juego joyería oro laminado',       'description' => 'Incluye collar, aretes y pulsera. Precio en soles (PEN).',           'price' => 460.00,  'stock' => 12, 'is_active' => true],
         ];
 
         // Agrega timestamps para insert masivo
