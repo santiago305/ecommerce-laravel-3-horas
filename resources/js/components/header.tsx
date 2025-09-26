@@ -55,7 +55,7 @@ export default function Header({ cartCount = 0, defaultQ = '' }: { cartCount?: n
   return (
     <header className="sticky top-0 z-40 w-full border-b bg-background/80 backdrop-blur">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 md:px-6">
-        <Link href={path.home} className="text-lg font-semibold tracking-tight">RUFUS</Link>
+        <Link href={path.home} className="text-lg font-semibold tracking-tight">Arcángel</Link>
 
         <div className="relative hidden min-w-[360px] max-w-xl flex-1 md:block">
           <form

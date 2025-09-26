@@ -35,7 +35,7 @@ export default function Footer() {
                 </div>
                 </div>
                 <div className="mt-10 flex flex-col items-center justify-between gap-4 border-t pt-6 text-sm text-muted-foreground md:flex-row">
-                <p>© {new Date().getFullYear()} MiTienda — Todos los derechos reservados.</p>
+                <p>© {new Date().getFullYear()} Arcángel — Todos los derechos reservados.</p>
                 <p>Hecho con ♥ en React + Tailwind</p>
                 </div>
             </div>
