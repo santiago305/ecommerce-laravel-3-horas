@@ -28,7 +28,10 @@ return new class extends Migration {
             $table->timestamps();
 
             $table->unique(['cart_id','product_id']);
-            $table->check('quantity > 0');
+
+            if (method_exists($table, 'check')) {
+                $table->check('quantity > 0');
+            }
         });
     }
 

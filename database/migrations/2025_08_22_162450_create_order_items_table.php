@@ -29,7 +29,10 @@ return new class extends Migration {
             $table->decimal('tax_rate', 5, 2)->default(18.00);
             $table->decimal('total_line', 10, 2);
             $table->timestamps();
-            $table->check('quantity > 0');
+
+            if (method_exists($table, 'check')) {
+                $table->check('quantity > 0');
+            }
         });
     }
 
