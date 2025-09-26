@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import { useMemo } from 'react';
 import Header from '@/components/header';
 import Footer from '@/components/footer';
 import { Link } from '@inertiajs/react';

@@ -1,9 +1,10 @@
 <?php
 
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Query\Expression;
 use Illuminate\Database\Schema\Blueprint;
-use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Facades\DB; // 👈 necesario para DB::raw()
+use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
@@ -13,8 +14,14 @@ return new class extends Migration
     public function up(): void
     {
         // USERS con UUID + role
-        Schema::create('users', function (Blueprint $table) {
-            $table->uuid('id')->primary()->default(DB::raw('gen_random_uuid()')); // 👈 UUID
+        $uuidDefault = $this->uuidDefaultExpression();
+
+        Schema::create('users', function (Blueprint $table) use ($uuidDefault) {
+            $idColumn = $table->uuid('id');
+            if ($uuidDefault) {
+                $idColumn->default($uuidDefault);
+            }
+            $table->primary('id');
             $table->string('name');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
@@ -50,5 +57,14 @@ return new class extends Migration
         Schema::dropIfExists('sessions');
         Schema::dropIfExists('password_reset_tokens');
         Schema::dropIfExists('users');
+    }
+
+    private function uuidDefaultExpression(): ?Expression
+    {
+        return match (Schema::getConnection()->getDriverName()) {
+            'pgsql' => DB::raw('gen_random_uuid()'),
+            'mysql' => DB::raw('(UUID())'),
+            default => null,
+        };
     }
 };
